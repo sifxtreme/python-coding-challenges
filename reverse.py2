@@ -1,0 +1,12 @@
+import sys
+
+input_file = sys.argv[1]
+
+with open(input_file) as f:
+	for num in f:
+		n = int(num)
+		count = 0
+		while(str(n) != str(n)[::-1]):
+			n += int(str(n)[::-1])
+			count += 1
+		print count, n

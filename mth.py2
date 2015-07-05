@@ -1,0 +1,13 @@
+import sys
+
+input_file = sys.argv[1]
+
+with open(input_file) as f:
+	for line in f:
+		if(len(line) == 1):
+			continue
+		nums = line.split()
+		index = -1 * int(nums[-1]) - 1
+		if -index > len(nums):
+			continue
+		print nums[-1 * int(nums[-1]) - 1]

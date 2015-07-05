@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import sys
+
+input_file = sys.argv[1]
+
+with open(input_file) as f:
+	for line in f:
+		mults = []
+		pipe_found = False
+		nums = line.split()
+		row = []
+		for i in nums:
+			if i == "|":
+				pipe_found = True
+			elif pipe_found == False:
+				mults.append(i)
+			else:
+				row.append(int(mults.pop(0))*int(i))
+		print ' '.join(map(str, row))

@@ -1,0 +1,32 @@
+#!/usr/bin/python
+
+import sys
+
+input_file = sys.argv[1]
+
+with open(input_file) as f:
+	for num in f:
+		if(len(num) == 1):
+			continue
+		sequence = []
+		condition = False
+
+		while(not condition):
+			new_num = 0
+			
+			sequence.append(int(num))
+			
+			for digit in str(num):
+				if digit.isdigit():
+					new_num += int(digit)**2
+
+			num = new_num
+			
+			if num == 1:
+				condition = True
+				print 1
+				break
+			if num in sequence:
+				condition = True
+				print 0
+				break

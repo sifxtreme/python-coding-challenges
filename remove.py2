@@ -1,0 +1,16 @@
+import sys
+
+input_file = sys.argv[1]
+
+with open(input_file) as f:
+	for line in f:
+		if(len(line) == 1):
+			continue
+		contents = line.split(',')
+		bad = list(contents[1].strip())
+		string = ""
+		for letter in contents[0]:
+			if(letter in bad):
+				continue
+			string += letter;
+		print string.strip()
